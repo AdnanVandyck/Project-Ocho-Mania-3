@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose
  
-const performanceSchema = new mongoose.Schema({
+// SCHEMA
+const performanceSchema = new Schema({
     venue: { type: String, required: true },
     date: Date,
     image: String,
@@ -9,5 +10,5 @@ const performanceSchema = new mongoose.Schema({
     songArtist: String
 })
 
-const Performance = mongoose.model('Performances', performanceSchema)
+const Performance = mongoose.model('Performance', performanceSchema)
 module.exports = Performance
