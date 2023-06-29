@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom"
-import Home from "./pages/Home";
 import Bio from "./pages/Bio";
 import Music from "./pages/Music";
 import Performances from "./pages/Performances";
@@ -18,7 +17,7 @@ return (
   <main>
 <div className="container">
 <Routes>
-<Route path="/" element={<Home />} />
+<Route path="/" />
 <Route path="/bio" element={<Bio />} />
 <Route path="/music" element={<Music />} />
 <Route path="/performances" element={<Performances />} />

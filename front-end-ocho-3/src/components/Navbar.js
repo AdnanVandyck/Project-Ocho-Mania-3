@@ -1,34 +1,152 @@
-import React from "react";
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
-
-
+import React, { useState } from "react";
+import { Link } from 'react-router-dom'
+import { 
+  NavbarContainer,
+  LeftContainer,
+  RightContainer,
+  NavbarExtendedContainer,
+  NavbarInnerContainer,
+  NavbarLinkContainer,
+  NavbarLink,
+  Logo,
+  OpenLinksButton,
+  NavbarLinkExtended,
+  LogoLink,
+ } from "../styles/Navbar.style";
+import LogoImg from "../assets/logo.png"
 
 function Navbar() {
+  const [extendNavbar, setExtendNavbar] = useState(false);
+
   return (
-    <nav className="nav">
-      <Link to="/" className="site-title">
-        OchoMania
-      </Link>
-      <ul>
-<CustomLink to="/bio">Bio</CustomLink>
-<CustomLink to="/music">Music</CustomLink>
-<CustomLink to="/performances">Performances</CustomLink>
-<CustomLink to="/clients">Clients</CustomLink>
-<CustomLink to="/connect">Connect</CustomLink>
-      </ul>
-    </nav>
+    <NavbarContainer extendNavbar={extendNavbar}>
+      <NavbarInnerContainer>
+        <LeftContainer>
+          <NavbarLinkContainer>
+          <NavbarLink to="/bio">Bio</NavbarLink>
+<NavbarLink to="/music">Music</NavbarLink>
+<NavbarLink to="/performances">Performances</NavbarLink>
+<NavbarLink to="/clients">Clients</NavbarLink>
+<NavbarLink to="/connect">Connect</NavbarLink>
+            <OpenLinksButton
+              onClick={() => {
+                setExtendNavbar((curr) => !curr);
+              }}
+            >
+              {extendNavbar ? <>&#10005;</> : <> &#8801;</>}
+            </OpenLinksButton>
+          </NavbarLinkContainer>
+        </LeftContainer>
+        <RightContainer>
+         <LogoLink to="/"> 
+        <Logo to="/" className="site-title" src={LogoImg}></Logo>
+        </LogoLink>
+         </RightContainer>
+      </NavbarInnerContainer>
+      {extendNavbar && (
+        <NavbarExtendedContainer>
+          <NavbarLinkExtended to="/bio">Bio</NavbarLinkExtended>
+<NavbarLinkExtended to="/music">Music</NavbarLinkExtended>
+<NavbarLinkExtended to="/performances">Performances</NavbarLinkExtended>
+<NavbarLinkExtended to="/clients">Clients</NavbarLinkExtended>
+<NavbarLinkExtended to="/connect">Connect</NavbarLinkExtended>
+        </NavbarExtendedContainer>
+      )}
+    </NavbarContainer>
   );
 }
 
-function CustomLink({ to, children, ...props}) {
-const resolvedPath = useResolvedPath(to)
-const isActive = useMatch({ path: resolvedPath.pathname, end: true})
-    return (
-        <li className={isActive === to ? "active" : ""}>
-        <Link to={to} {...props}> 
-        {children}</Link>
-      </li>
-    )
-}
-
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { Link, useMatch, useResolvedPath } from "react-router-dom"
+
+
+
+// function Navbar() {
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+//   return (
+//     <nav className="nav">
+//       <Link to="/" className="site-title">
+//         OchoMania
+//       </Link>
+//       <ul>
+// <toNavbarLinkExtended to="/bio">Bio</toNavbarLinkExtended>
+// <toNavbarLinkExtended to="/music">Music</toNavbarLinkExtended>
+// <toNavbarLinkExtended to="/performances">Performances</toNavbarLinkExtended>
+// <toNavbarLinkExtended to="/clients">Clients</toNavbarLinkExtended>
+// <toNavbarLinkExtended to="/connect">Connect</toNavbarLinkExtended>
+//       </ul>
+//     </nav>
+//   );
+// }
+
+// function toNavbarLinkExtended({ to, children, ...props}) {
+// const resolvedPath = useResolvedPath(to)
+// const isActive = useMatch({ path: resolvedPath.pathname, end: true})
+//     return (
+//         <li className={isActive === to ? "active" : ""}>
+//         <Link to={to} {...props}> 
+//         {children}</Link>
+//       </li>
+//     )
+// }
+
+// export default Navbar;
