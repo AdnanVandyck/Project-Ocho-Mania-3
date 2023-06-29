@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home"
 import { Routes, Route } from "react-router-dom"
+import Home from "./pages/Home";
 import Bio from "./pages/Bio";
 import Music from "./pages/Music";
 import Performances from "./pages/Performances";
@@ -13,10 +13,10 @@ import Connect from "./pages/Connect";
 function App() {
 
 return (
-  <div className="App">  
+  <div className="container-fluid">  
   <Navbar /> 
   <main>
-<div nameClass="container">
+<div className="container">
 <Routes>
 <Route path="/" element={<Home />} />
 <Route path="/bio" element={<Bio />} />

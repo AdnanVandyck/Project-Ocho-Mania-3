@@ -1,4 +1,8 @@
-export default function Performances() {
+import React from 'react'
+import axios from 'axios'
+
+
+function Performances() {
   return(
     <h1>Performances</h1>
   )
@@ -42,4 +46,4 @@ export default function Performances() {
 //   )
 // }
 
-// export default performanceList
+export default Performances
