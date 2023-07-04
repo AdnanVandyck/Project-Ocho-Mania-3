@@ -6,6 +6,10 @@ import Music from "./pages/Music";
 import Performances from "./pages/Performances";
 import Clients from "./pages/Clients";
 import Connect from "./pages/Connect";
+import BackgroundImage from "./components/backgroundImage";
+
+
+
 
 
 
@@ -14,8 +18,9 @@ function App() {
 return (
   <div className="container-fluid">  
   <Navbar /> 
-  <main>
-<div className="container">
+  <BackgroundImage />
+   <main>
+<div className="container-fluid">
 <Routes>
 <Route path="/" />
 <Route path="/bio" element={<Bio />} />
@@ -24,8 +29,9 @@ return (
 <Route path="/clients" element={<Clients />} />
 <Route path="/connect" element={<Connect />} />
 </Routes>
-  </div>    
+  </div>  
 </main>
+
   </div>
 );
 }
