@@ -38,8 +38,8 @@ function Navbar() {
           </NavbarLinkContainer>
         </LeftContainer>
         <RightContainer>
-         <LogoLink to="/"> 
-        <Logo to="/" className="site-title" src={LogoImg}></Logo>
+         <LogoLink to="/home"> 
+        <Logo to="/home" className="site-title" src={LogoImg}></Logo>
         </LogoLink>
          </RightContainer>
       </NavbarInnerContainer>
