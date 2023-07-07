@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+// import Audiowide from "../fonts/audiowide/Audiowide-Regular.ttf"
+
+
+
 
 export const NavbarContainer = styled.nav`
   width: 100%;
@@ -7,7 +11,6 @@ export const NavbarContainer = styled.nav`
   background-color: black;
   display: flex;
   flex-direction: column;
-
   @media (min-width: 700px) {
     height: 80px;
   }
@@ -20,11 +23,12 @@ export const LeftContainer = styled.div`
   padding-left: 5%;
 `;
 
+
 export const RightContainer = styled.div`
-  flex: 30%;
+  flex: 50%;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  padding-right: 10px;
 `;
 
 export const NavbarInnerContainer = styled.div`
@@ -33,6 +37,7 @@ export const NavbarInnerContainer = styled.div`
   display: flex;
 `;
 
+
 export const NavbarLinkContainer = styled.div`
   display: flex;
 `;
@@ -40,10 +45,11 @@ export const NavbarLinkContainer = styled.div`
 export const NavbarLink = styled(Link)`
   color: white;
   font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Audiowide', sans-serif;
   text-decoration: none;
+  // text-transform: uppercase;
   margin: 10px;
-
+  
   @media (max-width: 700px) {
     display: none;
   }
@@ -51,8 +57,8 @@ export const NavbarLink = styled(Link)`
 
 export const NavbarLinkExtended = styled(Link)`
   color: white;
-  font-size: x-large;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-family: 'Audiowide', sans-serif;
   text-decoration: none;
   margin: 10px;
 `;
@@ -64,7 +70,7 @@ export const Logo = styled.img`
 `;
 
 export const LogoLink = styled(Link)`
-flex: 30%;
+flex: 20%;
 display: flex;
 justify-content: flex-end;
 padding-right: 50px;

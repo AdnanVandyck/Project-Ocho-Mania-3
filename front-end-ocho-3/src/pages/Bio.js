@@ -1,5 +1,9 @@
-export default function Bio() {
-  return(
-    <h1>Bio</h1>
+import React from 'react'
+
+function Bio() {
+  return (
+    <div>Bio</div>
   )
 }
+
+export default Bio

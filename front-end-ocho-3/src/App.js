@@ -6,7 +6,8 @@ import Music from "./pages/Music";
 import Performances from "./pages/Performances";
 import Clients from "./pages/Clients";
 import Connect from "./pages/Connect";
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
+import BackgroundImage from "./components/backgroundImage";
 
 
 
@@ -25,7 +26,7 @@ return (
 
   <div className="display">
 <Routes>
-<Route path="/home" element={<Home />} />
+<Route path="/" element={<BackgroundImage />} />
 <Route path="/bio" element={<Bio />} />
 <Route path="/music" element={<Music />} />
 <Route path="/performances" element={<Performances />} />

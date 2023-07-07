@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
-import { 
+// import { Link } from "react-router-dom";
+import {
   NavbarContainer,
   LeftContainer,
   RightContainer,
@@ -12,8 +12,11 @@ import {
   OpenLinksButton,
   NavbarLinkExtended,
   LogoLink,
- } from "../styles/Navbar.style";
-import LogoImg from "../assets/logo.png"
+} from "../styles/Navbar.style";
+import LogoImg from "../assets/logo.png";
+import { Instagram, Twitter } from "react-bootstrap-icons";
+import { Button } from "react-bootstrap";
+import "../styles/socials.css";
 
 function Navbar() {
   const [extendNavbar, setExtendNavbar] = useState(false);
@@ -23,11 +26,23 @@ function Navbar() {
       <NavbarInnerContainer>
         <LeftContainer>
           <NavbarLinkContainer>
-          <NavbarLink to="/bio">Bio</NavbarLink>
-<NavbarLink to="/music">Music</NavbarLink>
-<NavbarLink to="/performances">Performances</NavbarLink>
-<NavbarLink to="/clients">Clients</NavbarLink>
-<NavbarLink to="/connect">Connect</NavbarLink>
+            <NavbarLink to="/">Home</NavbarLink>
+            <NavbarLink to="/bio">Bio</NavbarLink>
+            <NavbarLink to="/music">Music</NavbarLink>
+            <NavbarLink to="/performances">Performances</NavbarLink>
+            <NavbarLink to="/clients">Clients</NavbarLink>
+            <NavbarLink to="/connect">Connect</NavbarLink>
+
+
+                <Button href="https://www.instagram.com/iamdj8pm/?igshid=OGQ5ZDc2ODk2ZA%3D%3D">
+                  <Instagram color="white" size={20} className="social-icon" />
+                </Button>
+
+                <Button href="https://twitter.com/iamdj8pm?s=11&t=CP3HdW_u-PZ9rfv1ZaFryA">
+                  <Twitter color="white" size={20} />
+                </Button>
+
+
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((curr) => !curr);
@@ -38,18 +53,21 @@ function Navbar() {
           </NavbarLinkContainer>
         </LeftContainer>
         <RightContainer>
-         <LogoLink to="/home"> 
-        <Logo to="/home" className="site-title" src={LogoImg}></Logo>
-        </LogoLink>
-         </RightContainer>
+          <LogoLink to="/">
+            <Logo to="/" className="site-title" src={LogoImg}></Logo>
+          </LogoLink>
+        </RightContainer>
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
+          <NavbarLinkExtended to="/">Home</NavbarLinkExtended>
           <NavbarLinkExtended to="/bio">Bio</NavbarLinkExtended>
-<NavbarLinkExtended to="/music">Music</NavbarLinkExtended>
-<NavbarLinkExtended to="/performances">Performances</NavbarLinkExtended>
-<NavbarLinkExtended to="/clients">Clients</NavbarLinkExtended>
-<NavbarLinkExtended to="/connect">Connect</NavbarLinkExtended>
+          <NavbarLinkExtended to="/music">Music</NavbarLinkExtended>
+          <NavbarLinkExtended to="/performances">
+            Performances
+          </NavbarLinkExtended>
+          <NavbarLinkExtended to="/clients">Clients</NavbarLinkExtended>
+          <NavbarLinkExtended to="/connect">Connect</NavbarLinkExtended>
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
@@ -58,70 +76,11 @@ function Navbar() {
 
 export default Navbar;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
-
-
 // function Navbar() {
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 //   return (
 //     <nav className="nav">
 //       <Link to="/" className="site-title">
@@ -143,7 +102,7 @@ export default Navbar;
 // const isActive = useMatch({ path: resolvedPath.pathname, end: true})
 //     return (
 //         <li className={isActive === to ? "active" : ""}>
-//         <Link to={to} {...props}> 
+//         <Link to={to} {...props}>
 //         {children}</Link>
 //       </li>
 //     )
